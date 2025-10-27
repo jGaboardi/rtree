@@ -40,7 +40,7 @@ jobs:
     - name: Build wheels
       uses: pypa/cibuildwheel@v2.23.3
 
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       with:
         name: cibw-wheels-${{ matrix.os }}
         path: ./wheelhouse/*.whl
@@ -54,7 +54,7 @@ jobs:
     - name: Build sdist
       run: pipx run build --sdist
 
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       with:
         name: cibw-sdist
         path: dist/*.tar.gz
